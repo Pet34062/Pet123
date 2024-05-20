@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares Favoritos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lugares Favoritos</h1>
+    </header>
+    <main>
+        <section class="photo-upload">
+            <h2>Adicionar Fotos Especiais</h2>
+            <input type="file" id="photo1" name="photo1" accept="image/*">
+            <input type="file" id="photo2" name="photo2" accept="image/*">
+            <input type="file" id="photo3" name="photo3" accept="image/*">
+            <input type="file" id="photo4" name="photo4" accept="image/*">
+        </section>
+        <section class="favorites">
+            <h2>Meus Estabelecimentos Favoritos</h2>
+            <button id="star-button" onclick="editFavorites()">&#9733; Marcar como favorito</button>
+            <ul id="favorite-list">
+                <li id="restaurant1">.</li>
+                <li id="restaurant2">.</li>
+                <li id="restaurant3">.</li>
+            </ul>
+        </section>
+        <section class="ranking">
+            <h2>Ranqueamento dos Estabelecimentos</h2>
+            <div class="rank-item">
+                <span id="rank-restaurant1">.</span>
+                <div class="rank-bar">
+                    <div class="rank-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="rank-item">
+                <span id="rank-restaurant2">.</span>
+                <div class="rank-bar">
+                    <div class="rank-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="rank-item">
+                <span id="rank-restaurant3">.</span>
+                <div class="rank-bar">
+                    <div class="rank-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lugares Favoritos</p>
+    </footer>
+
+    <script>
+        function editFavorites() {
+            var restaurant1 = prompt("Digite o novo nome para o primeiro restaurante:");
+            var restaurant2 = prompt("Digite o novo nome para o segundo restaurante:");
+            var restaurant3 = prompt("Digite o novo nome para o terceiro restaurante:");
+
+            document.getElementById("restaurant1").textContent = restaurant1;
+            document.getElementById("restaurant2").textContent = restaurant2;
+            document.getElementById("restaurant3").textContent = restaurant3;
+
+            document.getElementById("rank-restaurant1").textContent = restaurant1;
+            document.getElementById("rank-restaurant2").textContent = restaurant2;
+            document.getElementById("rank-restaurant3").textContent = restaurant3;
+        }
+    </script>
+</body>
+</html>
